@@ -57,11 +57,19 @@ container.innerHTML = `
     <span><b>Sovled:</b></span>
     <span>${ params.solved === "true" ? "Yes" : "No" }</span>
 </div>
-<div>
-    <span><b>Perpetrator's Name:</b></span>
-    <span>${ params.perp_name }</span>
-</div>
-${ punishmentString }
+${ 
+    params.solved === "true"
+    ?
+        `
+            <div>
+                <span><b>Perpetrator's Name:</b></span>
+                <span>${ params.perp_name }</span>
+            </div>
+            ${ punishmentString }
+        `
+    :
+        ""
+ }
 `
 
 console.log(params.ho)
