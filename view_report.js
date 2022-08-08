@@ -8,12 +8,12 @@ if (params.victim_name === null) {
     container.innerHTML = "<h1>No data loaded!</h1>"
 } else {
     var punishmentString = ""
-    const punishmentAssigned = !(params.jail_time === null && params.fine_amount === null)
+    const punishmentAssigned = !(params.jail_time === "null" && params.fine_amount === "null")
 
     if (punishmentAssigned) {
         punishmentString = "<div><span><b>Punishment:</b></span></div>"
 
-        if (params.jail_time !== null) {
+        if (params.jail_time !== "null") {
             punishmentString += `
             <div>
                 <span>Jail Time:</span>
@@ -22,7 +22,7 @@ if (params.victim_name === null) {
             `
         }
 
-        if (params.fine_amount !== null) {
+        if (params.fine_amount !== "null") {
             punishmentString += `
             <div>
                 <span>Fine Amount:</span>
